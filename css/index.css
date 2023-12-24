@@ -22,7 +22,7 @@
 .container-date {
   margin-top: 20px;
   text-align: center;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 .container-date .date-location {
@@ -31,6 +31,10 @@
 
 .container-date .date-location i {
     margin-right: 10px;
+}
+
+.container-date .date {
+  font-size: 18px;
 }
 
 .image {
@@ -94,6 +98,7 @@
     z-index: 1;
     border-radius: 80px 80px 0 0;
     display: none;
+    filter: blur(3px);
 }
 
 /*SPINNER*/
