@@ -19,6 +19,11 @@
     background-color: #ffffff;
 }
 
+.container-date {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}
 
 .container-date .date-location {
     display: flex;
@@ -31,6 +36,7 @@
 .image {
     width: 60%;
     max-width: 300px;
+    margin-top: 30px;
 }
 
 .image img {
@@ -38,12 +44,25 @@
     height: auto;
     box-shadow: black;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-15px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 .card-weather {
     width: 80%;
-    height: 200px;
-    margin-bottom: 20px;
+    height: 250px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -53,13 +72,13 @@
     box-shadow: 10px 10px 16px -13px rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 18px;
     padding: 30px 10px 30px 10px;
     z-index: 2;
 }
 
 .card-weather .temperature {
-    font-size: 60px;
+    font-size: 80px;
     font-weight: bold;
     margin-bottom: 30px;
 }
