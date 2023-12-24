@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima de mi ciudad</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body onload="onLoad()">
+    <div id="container" class="container">
+
+        <div class="container-date">
+            <div class="date-location">
+                <i class="fa-solid fa-location-dot"></i>
+                <div id="location" class="location"></div>
+            </div>
+            <div id="date" class="date"></div>
+        </div>
+        
+
+        <div id="image" class="image">
+            <img src="./img/dia.png" alt="">
+        </div>
+
+        <div class="card-weather">
+            <div id="temperature" class="temperature" ></div>
+            
+            <div id="description" class="description"></div>
+            <div id="humidity" class="humidity"></div>
+            <div id="pressure" class="pressure"></div>
+            
+            
+        </div>
+
+        
+    </div>
+
+    <div class="figura-fondo"></div>
+    
+
+    <div id="loader" class="loader">Loading...</div>
+
+    <script src="https://kit.fontawesome.com/e592da9494.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+    
+</body>
+</html>
