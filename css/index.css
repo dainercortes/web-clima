@@ -8,7 +8,7 @@
 }
 
 .container {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     max-width: 1000px;
@@ -74,12 +74,13 @@
     background-color: #ffe83e;
     z-index: 1;
     border-radius: 80px 80px 0 0;
+    display: none;
 }
 
 /*SPINNER*/
 
 .loader {
-    color: #3498DB;
+    color: #ffe83e;
     font-size: 20px;
     margin: 100px auto;
     width: 1em;
@@ -92,7 +93,6 @@
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
-    display: none;
   }
   @-webkit-keyframes load4 {
     0%,

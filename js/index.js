@@ -54,9 +54,11 @@ const insertData = (weatherData) => {
 const cleanUp = () => {
     let container = document.getElementById('container')
     let loader = document.getElementById('loader')
+    let figuraFondo = document.getElementById('figura-fondo')
 
     loader.style.display = 'none'
     container.style.display = 'flex'
+    figuraFondo.style.display = 'initial'
 }
 
 const getDate = () => {
