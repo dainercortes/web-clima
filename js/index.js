@@ -2,7 +2,7 @@ const API_KEY = '0b8e358f5f95b03bf1e0893b83eb2df1'
 
 const fetchData = position => {
     const {latitude, longitude} = position.coords
-    fetch(`http://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
     .then(response => response.json())
     .then(data => setWeatherData(data))
     console.log(data)
@@ -19,6 +19,12 @@ const setWeatherData = data => {
         date: getDate()
     }
 
+    insertData(weatherData)
+
+    cleanUp()
+}
+
+const insertData = (weatherData) => {
     let text = ''
     let grade = ''
 
@@ -36,28 +42,13 @@ const setWeatherData = data => {
 
         text = ''
         grade = ''
-
-        console.log(key)
     })
 
-    insertData()
+    if (weatherData.description == 'Clouds') {
+        document.getElementById('mi-image').src = '../img/nubladoDia.png'
 
-    cleanUp()
-}
-
-const insertData = () => {
-
-    
-
-    /*document.getElementById('temperature').textContent = weatherData[temperature]
-    <p id="temperature" class="temperature"></p>
-            
-
-    <div id="location" class="location"></div>
-            <div id="date" class="date"></div>
-            <div id="description" class="description"></div>
-            <div id="humidity" class="humidity"></div>
-            <div id="pressure" class="pressure"></div>*/
+        console.log('Hola')
+    }
 }
 
 const cleanUp = () => {
