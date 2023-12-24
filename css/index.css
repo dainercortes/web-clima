@@ -42,8 +42,8 @@
 
 .card-weather {
     width: 80%;
-    height: 250px;
-    margin-bottom: 30px;
+    height: 200px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     text-align: center;
