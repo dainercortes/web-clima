@@ -4,23 +4,23 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    color: rgb(0, 35, 88)
+    color: rgb(0, 35, 88);
+    box-sizing: border-box;
+    font-size: 14px;
 }
 
 .container {
     display: none;
     flex-direction: column;
     width: 100%;
-    max-width: 1000px;
+    max-width: 500px;
     height: 90vh;
     align-items: center;
-    justify-content: space-around;
-    word-wrap: break-word;
-    background-color: #ffffff;
+    margin: auto;
 }
 
 .container-date {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
   font-size: 24px;
 }
@@ -39,8 +39,9 @@
 
 .image {
     width: 60%;
-    max-width: 300px;
+    max-width: 250px;
     margin-top: 30px;
+    z-index: 2;
 }
 
 .image img {
@@ -65,8 +66,8 @@
 
 .card-weather {
     width: 80%;
-    height: 250px;
-    margin-bottom: 0px;
+    height: 300px;
+    margin-bottom: -10px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -82,9 +83,39 @@
 }
 
 .card-weather .temperature {
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
-    margin-bottom: 30px;
+}
+
+.card-weather .weather {
+  margin-bottom: 40px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.content-weather {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: left;
+}
+
+.card-weather .humidity {
+  display: flex;
+}
+
+.card-weather .humidity i {
+  font-size: 32px;
+  margin-right: 5px;
+}
+
+.card-weather .windspeed {
+  display: flex;
+}
+
+.card-weather .windspeed i {
+  font-size: 32px;
+  margin-right: 5px;
 }
 
 .figura-fondo {
@@ -93,11 +124,13 @@
     left: 0;
     right: 0;
     width: 100%;
+    max-width: 500px;
     height: 300px;
     background-color: #ffe83e;
     z-index: 1;
     border-radius: 80px 80px 0 0;
     display: none;
+    margin: auto;
 }
 
 /*SPINNER*/
