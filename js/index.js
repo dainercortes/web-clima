@@ -1,23 +1,28 @@
 const API_KEY = '0b8e358f5f95b03bf1e0893b83eb2df1'
+let iconWeather = ''
 
 const fetchData = position => {
     const {latitude, longitude} = position.coords
     fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
     .then(response => response.json())
     .then(data => setWeatherData(data))
-    console.log(data)
 }
 
 const setWeatherData = data => {
     console.log(data)
+
     const weatherData = {
-        location: data.name,
-        description: data.weather[0].main,
+        location: data.name + ", " + data.sys.country,
+        description: data.weather[0].main + ", " + data.weather[0].description,
         humidity: data.main.humidity,
-        pressure: data.main.pressure,
+        windspeed: (data.wind.speed * 3.6).toFixed(1),
         temperature: data.main.temp,
         date: getDate()
     }
+
+    iconWeather = data.weather[0].icon
+
+    console.log(iconWeather)
 
     insertData(weatherData)
 
@@ -32,10 +37,10 @@ const insertData = (weatherData) => {
 
         if (key == 'humidity') {
             text = 'Humidity: '
-        } else if (key == 'pressure') {
-            text = 'Pressure: '
+        } else if (key == 'windspeed') {
+            text = 'Wind speed: '
         } else if (key == 'temperature') {
-            grade = '°'
+            grade = '°C'
         }
 
         document.getElementById(key).textContent = text + weatherData[key] + grade
@@ -43,14 +48,8 @@ const insertData = (weatherData) => {
         text = ''
         grade = ''
     })
-
-    if (weatherData.description == 'Clouds') {
-        document.getElementById('mi-image').src = '../img/noche.png'
-    } else if ((weatherData.description == 'Rain')) {
-        document.getElementById('mi-image').src = '../img/lluvioso.png'
-    } else if ((weatherData.description == 'Snow')) {
-
-    }
+    
+    document.getElementById('mi-image').src = `https://openweathermap.org/img/wn/${iconWeather}@4x.png`
 }
 
 const cleanUp = () => {
