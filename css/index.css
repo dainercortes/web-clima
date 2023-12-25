@@ -19,9 +19,11 @@ body {
     flex-direction: column;
     width: 100%;
     max-width: 400px;
-    height: 100vh;
+    height: auto;
+    min-height: 90vh;
+    max-height: 100vh;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: auto;
 }
 
@@ -36,7 +38,7 @@ body {
 
 .container-date .date-location i {
     margin-right: 10px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .container-date .date-location .location {
@@ -57,7 +59,6 @@ body {
 .image img {
     width: 100%;
     height: auto;
-    box-shadow: black;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
     animation: float 3.5s ease-in-out infinite;
     z-index: 3;
@@ -81,10 +82,9 @@ body {
     margin-bottom: 0px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     background-color: rgba(244, 244, 244, 0.7);
-    -webkit-box-shadow: 10px 10px 16px -13px rgba(0,0,0,0.3);
-    -moz-box-shadow: 10px 10px 16px -13px rgba(0,0,0,0.3);
     box-shadow: 10px 10px 16px -13px rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
     border-radius: 20px;
@@ -114,19 +114,21 @@ body {
 
 .card-weather .humidity {
   display: flex;
+  align-items: center;
 }
 
 .card-weather .humidity i {
-  font-size: 32px;
+  font-size: 40px;
   margin-right: 5px;
 }
 
 .card-weather .windspeed {
   display: flex;
+  align-items: center;
 }
 
 .card-weather .windspeed i {
-  font-size: 32px;
+  font-size: 40px;
   margin-right: 5px;
 }
 

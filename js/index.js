@@ -88,13 +88,32 @@ const getDate = () => {
     return fechaFormateada;
 }
 
-const changeIcon = (weatherData) => {
-    
-    var fecha = new Date();
-    var hora = fecha.getHours();
 
+const changeColor = () => {
+    var fecha = new Date()
+    var hora = fecha.getHours()
+    var elementosDeTexto = document.querySelectorAll('body *:not(script)')
+
+    if (hora >= 13) {
+        document.getElementById('loader-l').style.color = '#FFFFFF'
+
+        document.body.style.background = 'linear-gradient(180deg, rgb(35, 35, 35) 18%, rgb(39, 58, 92) 51%, rgb(62, 133, 255) 100%)'
+        
+        document.getElementById('card-weather').style.background = 'rgba(27, 27, 27, 0.7)'
+
+        document.getElementById('card-weather').style.boxShadow = '10px 10px 16px -13px rgba(255,255,255,0.3)'
+
+        document.getElementById('mi-image').style.filter = 'drop-shadow(0 2px 5px rgba(255, 255, 255, 0.7))'
+
+        elementosDeTexto.forEach(function(elemento) {
+            elemento.style.color = 'white'  
+        });
+    }
+    
 }
 
 const onLoad = () => {
+    changeColor()
     navigator.geolocation.getCurrentPosition(fetchData)
+    
 }
