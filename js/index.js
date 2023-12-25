@@ -31,9 +31,9 @@ const insertData = (weatherData) => {
     Object.keys(weatherData).forEach(key => {
 
         if (key == 'humidity') {
-            text = 'Humedad: '
+            text = 'Humidity: '
         } else if (key == 'pressure') {
-            text = 'Presión: '
+            text = 'Pressure: '
         } else if (key == 'temperature') {
             grade = '°'
         }
@@ -45,9 +45,11 @@ const insertData = (weatherData) => {
     })
 
     if (weatherData.description == 'Clouds') {
-        document.getElementById('mi-image').src = '../img/nubladoDia.png'
+        document.getElementById('mi-image').src = '../img/noche.png'
+    } else if ((weatherData.description == 'Rain')) {
+        document.getElementById('mi-image').src = '../img/lluvioso.png'
+    } else if ((weatherData.description == 'Snow')) {
 
-        console.log('Hola')
     }
 }
 
