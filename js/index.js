@@ -94,7 +94,7 @@ const changeColor = () => {
     var hora = fecha.getHours()
     var elementosDeTexto = document.querySelectorAll('body *:not(script)')
 
-    if (hora >= 13) {
+    if (hora >= 19) {
         document.getElementById('loader-l').style.color = '#FFFFFF'
 
         document.body.style.background = 'linear-gradient(180deg, rgb(35, 35, 35) 18%, rgb(39, 58, 92) 51%, rgb(62, 133, 255) 100%)'
