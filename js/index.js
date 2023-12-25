@@ -70,8 +70,22 @@ const cleanUp = () => {
 }
 
 const getDate = () => {
-    let date = new Date();
-    return `${date.getDate()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${date.getFullYear()}`
+    var fecha = new Date();
+  
+    // Días de la semana y meses en español
+    var diasSemana = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var meses = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  
+    // Obtén el día de la semana, el día del mes y el mes
+    var diaSemana = diasSemana[fecha.getDay()];
+    var diaMes = fecha.getDate();
+    var mes = meses[fecha.getMonth()];
+  
+    // Construye la cadena formateada
+    var fechaFormateada = diaSemana + ', ' + diaMes+ " " + mes + ", " + fecha.getFullYear();
+  
+    // Devuelve la fecha formateada
+    return fechaFormateada;
 }
 
 const changeIcon = (weatherData) => {
@@ -80,7 +94,6 @@ const changeIcon = (weatherData) => {
     var hora = fecha.getHours();
 
 }
-
 
 const onLoad = () => {
     navigator.geolocation.getCurrentPosition(fetchData)
